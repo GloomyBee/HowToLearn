@@ -8,12 +8,12 @@ theme:
     - content.code.copy  # 代码块复制按钮
     - navigation.tabs    # 顶部导航
     - search.suggest     # 搜索建议
-nav:
-  - 首页: index.md
-  - 文件夹:
-      - 子文件夹: test1/
-  - 文件夹2:
-      - 子文件夹: test2/
+#nav:
+#  - 首页: index.md
+#  - 文件夹:
+#      - 子文件夹: test1/
+#  - 文件夹2:
+#      - 子文件夹: test2/
 plugins:
   - search
 markdown_extensions:
