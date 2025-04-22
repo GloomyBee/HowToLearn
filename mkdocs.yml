@@ -10,11 +10,10 @@ theme:
     - search.suggest     # 搜索建议
 nav:
   - 首页: index.md
-  - Python:
-      - 基础语法: Python/基础语法.md
-      - 数据结构: Python/数据结构.md
-  - JavaScript:
-      - 事件循环: JavaScript/事件循环.md
+  - 文件夹:
+      - 子文件夹: test1/
+  - 文件夹2:
+      - 子文件夹: test2/
 plugins:
   - search
 markdown_extensions:

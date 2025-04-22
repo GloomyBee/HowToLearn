@@ -1,0 +1,11 @@
+# Python
+
+**pycache**/ \*.pyc
+
+# MkDocs
+
+site/
+
+# Virtual environment
+
+venv/
