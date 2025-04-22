@@ -1,0 +1,25 @@
+site_name: HowToLearn
+theme:
+  name: material
+  palette:
+    primary: indigo
+    scheme: default  # 支持暗黑/明亮模式切换
+  features:
+    - content.code.copy  # 代码块复制按钮
+    - navigation.tabs    # 顶部导航
+    - search.suggest     # 搜索建议
+nav:
+  - 首页: index.md
+  - Python:
+      - 基础语法: Python/基础语法.md
+      - 数据结构: Python/数据结构.md
+  - JavaScript:
+      - 事件循环: JavaScript/事件循环.md
+plugins:
+  - search
+markdown_extensions:
+  - pymdownx.highlight:  # 代码高亮
+      anchor_linenums: true
+  - pymdownx.superfences  # 增强代码块
+  - attr_list  # 支持图片大小等属性
+  - pymdownx.emoji  # 支持 emoji
