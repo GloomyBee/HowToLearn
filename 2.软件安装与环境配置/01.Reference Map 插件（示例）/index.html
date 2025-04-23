@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../1.%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/%E5%A6%82%E4%BD%95%E5%90%91%E4%BB%96%E4%BA%BA%E7%9A%84%20GitHub%20%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9/">
+      
+      
+        <link rel="next" href="../02.MkDocs%20%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>01.Reference Map 插件（示例） - HowToLearn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-obsidian-reference-map" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HowToLearn" class="md-header__button md-logo" aria-label="HowToLearn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HowToLearn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01.Reference Map 插件（示例）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HowToLearn 文档简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1.%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/%E5%A6%82%E4%BD%95%E5%90%91%E4%BB%96%E4%BA%BA%E7%9A%84%20GitHub%20%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9/" class="md-tabs__link">
+          
+  
+  
+  1.软件使用教程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  2.软件安装与环境配置
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../3.%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/1.%E5%9B%BA%E4%BD%93%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89/" class="md-tabs__link">
+          
+  
+  
+  3.其他文章
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HowToLearn" class="md-nav__button md-logo" aria-label="HowToLearn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HowToLearn
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HowToLearn 文档简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.软件使用教程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1.软件使用教程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/%E5%A6%82%E4%BD%95%E5%90%91%E4%BB%96%E4%BA%BA%E7%9A%84%20GitHub%20%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    项目推送文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    2.软件安装与环境配置
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2.软件安装与环境配置
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    01.Reference Map 插件（示例）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    01.Reference Map 插件（示例）
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-obsidian-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 1：安装 Obsidian Reference Map 插件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤 1：安装 Obsidian Reference Map 插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 确保 Obsidian 已安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 启用社区插件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 安装 Reference Map 插件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 手动安装（可选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤2. 配置 Reference Map 插件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤2. 配置 Reference Map 插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 General Settings（通用设置）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-static-list-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Static List Settings（静态列表设置）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-zotero-integrationzotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Zotero Integration（Zotero 集成）（未展示）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-dynamic-list-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Dynamic List Settings（动态列表设置）（未展示）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-graph-view-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Graph View Settings（图视图设置）（未展示）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-metadata-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Metadata Buttons（元数据按钮）（部分展示）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 3：使用 Reference Map 插件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤 3：使用 Reference Map 插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-reference-map-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 使用侧边栏视图（Reference Map Sidebar）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-reference-map-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 在线搜索并插入参考文献（Reference Map Search）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-reference-map-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 使用关系图视图（Reference Map Graph）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 动态参考列表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 4：结合文献管理工具（如 Zotero）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-deep-ritz" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 5：结合你的 Deep Ritz 方法研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤 5：结合你的 Deep Ritz 方法研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deep-ritz" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例操作：整理 Deep Ritz 方法文献
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      结合你的思维导图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-deep-ritz" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 应用配置到你的 Deep Ritz 方法研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 应用配置到你的 Deep Ritz 方法研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 整理文献笔记
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 使用动态参考列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 探索引用关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 结合 Zotero（如果使用）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.MkDocs%20%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02.MkDocs 部署文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.其他文章
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3.其他文章
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/1.%E5%9B%BA%E4%BD%93%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.固体力学基础（示例文档）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-obsidian-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 1：安装 Obsidian Reference Map 插件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤 1：安装 Obsidian Reference Map 插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 确保 Obsidian 已安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 启用社区插件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 安装 Reference Map 插件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 手动安装（可选）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤2. 配置 Reference Map 插件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤2. 配置 Reference Map 插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 General Settings（通用设置）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-static-list-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Static List Settings（静态列表设置）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-zotero-integrationzotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Zotero Integration（Zotero 集成）（未展示）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-dynamic-list-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Dynamic List Settings（动态列表设置）（未展示）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-graph-view-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Graph View Settings（图视图设置）（未展示）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-metadata-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Metadata Buttons（元数据按钮）（部分展示）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-reference-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 3：使用 Reference Map 插件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤 3：使用 Reference Map 插件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-reference-map-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 使用侧边栏视图（Reference Map Sidebar）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-reference-map-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 在线搜索并插入参考文献（Reference Map Search）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-reference-map-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 使用关系图视图（Reference Map Graph）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 动态参考列表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 4：结合文献管理工具（如 Zotero）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-deep-ritz" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 5：结合你的 Deep Ritz 方法研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤 5：结合你的 Deep Ritz 方法研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deep-ritz" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例操作：整理 Deep Ritz 方法文献
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      结合你的思维导图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-deep-ritz" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 应用配置到你的 Deep Ritz 方法研究
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 应用配置到你的 Deep Ritz 方法研究">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 整理文献笔记
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 使用动态参考列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 探索引用关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-zotero" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 结合 Zotero（如果使用）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>01.Reference Map 插件（示例）</h1>
+
+<p>如何在 Obsidian 中安装和使用 Reference Map 插件。这个插件非常适合学术研究和文献管理，可以帮助你在 Obsidian 中创建和管理引文和参考文献地图，尤其是在整理文献综述或探索文献之间的关联时非常有用。以下是详细步骤和使用方法。</p>
+<hr />
+<h3 id="1-obsidian-reference-map">步骤 1：安装 Obsidian Reference Map 插件</h3>
+<h4 id="11-obsidian">1.1 确保 Obsidian 已安装</h4>
+<ul>
+<li>如果你还没有安装 Obsidian，可以从官方网站 <a href="https://obsidian.md">obsidian.md</a> 下载并安装，适用于 Windows、Mac、Linux 和移动设备。</li>
+<li>安装完成后，创建一个新的 vault（存储笔记的文件夹）或打开一个已有的 vault。</li>
+</ul>
+<h4 id="12">1.2 启用社区插件</h4>
+<p>Obsidian 的 Reference Map 是一个社区插件，需要先启用社区插件功能：
+1. 打开 Obsidian，进入你的 vault。
+2. 点击左下角的 <strong>设置</strong> 图标（齿轮图标）。
+3. 在设置菜单中，找到 <strong>社区插件（Community Plugins）</strong> 选项。
+4. 如果社区插件未启用，点击 <strong>启用社区插件（Turn on community plugins）</strong>。你可能会看到一个警告，说明社区插件可能存在安全风险，确认后继续。</p>
+<h4 id="13-reference-map">1.3 安装 Reference Map 插件</h4>
+<ol>
+<li>在 <strong>社区插件</strong> 页面，点击 <strong>浏览（Browse）</strong>，进入插件市场。</li>
+<li>在搜索栏中输入 <strong>Reference Map</strong>。</li>
+<li>找到由 <strong>Anoop K. Chandran</strong> 开发的 <strong>Reference Map</strong> 插件（插件描述为“Reference and citation map for literature review and discovery”）。</li>
+<li>点击 <strong>安装（Install）</strong> 按钮。</li>
+<li>安装完成后，点击 <strong>启用（Enable）</strong> 按钮，激活插件。</li>
+</ol>
+<h4 id="14">1.4 手动安装（可选）</h4>
+<p>如果由于网络问题无法直接从插件市场安装，你可以手动安装：
+1. 从 GitHub 仓库 <a href="https://github.com/anoopkcn/obsidian-reference-map">anoopkcn/obsidian-reference-map</a> 下载最新版本的插件文件。
+2. 将下载的 <code>obsidian-reference-map</code> 文件夹解压并复制到你的 vault 下的 <code>.obsidian/plugins/</code> 文件夹中（路径示例：<code>你的vault路径/.obsidian/plugins/obsidian-reference-map</code>）。
+3. 重新加载 Obsidian，然后在 <strong>社区插件</strong> 设置中启用 Reference Map 插件。</p>
+<hr />
+<h3 id="2-reference-map">步骤2. 配置 Reference Map 插件</h3>
+<h4 id="21-general-settings">2.1 General Settings（通用设置）</h4>
+<p>这些设置控制侧边栏的显示内容和格式。以下是截图中可见的选项及其建议配置：</p>
+<ol>
+<li><strong>Show or hide the abstract</strong>（显示或隐藏摘要）：</li>
+<li><strong>建议</strong>：<strong>关闭（Toggle OFF）</strong>。</li>
+<li>
+<p><strong>原因</strong>：摘要可能占用较多空间，如果你主要关注文献标题、作者和年份，关闭摘要可以让侧边栏更简洁。如果你需要查看摘要，可以在需要时点击文献卡片查看详情。</p>
+</li>
+<li>
+<p><strong>Show or hide the names of all authors</strong>（显示或隐藏所有作者姓名）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：学术文献通常需要明确作者信息，尤其是多人合作论文（如 Deep Ritz 方法的奠基论文 E 和 Yu，2017）。显示所有作者有助于快速识别文献。</p>
+</li>
+<li>
+<p><strong>Show or hide the journal, volume and pages</strong>（显示或隐藏期刊、卷号和页码）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：期刊、卷号和页码是文献引用的重要信息，尤其在学术写作中需要这些细节来符合引用规范。</p>
+</li>
+<li>
+<p><strong>Show or hide influential citation count</strong>（显示或隐藏重要引用计数）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：重要引用计数（通常来自 Semantic Scholar）可以帮助你快速判断一篇文献的影响力。例如，E 和 Yu (2017) 的奠基论文可能有较高的引用计数，表明其重要性。</p>
+</li>
+<li>
+<p><strong>Show or hide buttons on hover</strong>（悬停时显示或隐藏按钮）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：悬停按钮（如复制引文、打开文献链接）可以提高操作效率，尤其在整理文献时需要频繁复制引文信息。</p>
+</li>
+<li>
+<p><strong>Lookup entries in linked files</strong>（查找链接文件中的条目）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：如果你在 Obsidian 中通过 <code>[[文件名]]</code> 链接了其他文献笔记，启用此选项可以让 Reference Map 识别这些链接中的引文 ID，增强文献关联性。</p>
+</li>
+<li>
+<p><strong>Sort sidebar index cards</strong>（排序侧边栏索引卡片）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：排序可以按年份、标题或作者对索引卡片排序，便于快速查找。例如，你可以按年份排序查看 Deep Ritz 方法文献的时间线（从 2017 到 2023）。</p>
+</li>
+<li>
+<p><strong>Sort sidebar citing and cited cards</strong>（排序侧边栏引用和被引卡片）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：引用和被引卡片排序有助于你快速找到最相关或最新的文献。例如，查看 E 和 Yu (2017) 被哪些后续文献（如 Duan 等，2022）引用。</p>
+</li>
+<li>
+<p><strong>Citation style</strong>（引用样式）：</p>
+</li>
+<li><strong>当前设置</strong>：American Psychological Association 7th edition (default)。</li>
+<li>
+<p><strong>建议</strong>：根据你的学术领域选择合适的引用样式。</p>
+<ul>
+<li>如果你在计算机科学或数学领域（Deep Ritz 方法相关），建议选择 <strong>IEEE</strong> 或 <strong>APA</strong>（APA 已经启用，适合通用学术写作）。</li>
+<li>如果需要其他样式（如 Chicago、MLA），可以在 Zotero 或 Citation Style Language (CSL) 网站下载对应的 CSL 文件，并导入 Obsidian。</li>
+</ul>
+</li>
+<li>
+<p><strong>Citation language</strong>（引用语言）：</p>
+<ul>
+<li><strong>当前设置</strong>：中文（中国大陆）。</li>
+<li><strong>建议</strong>：根据你的写作语言选择。</li>
+<li>如果你的笔记和论文以中文为主，保留 <strong>中文（中国大陆）</strong>。</li>
+<li>如果你需要用英文写作（例如发表国际期刊论文），建议切换为 <strong>English (United States)</strong>，以确保引文格式符合国际规范。</li>
+</ul>
+</li>
+</ol>
+<h4 id="22-static-list-settings">2.2 Static List Settings（静态列表设置）</h4>
+<p>这些设置控制如何查找和显示引文（citekey），适合使用本地文献库或 Zotero 集成的情况。</p>
+<ol>
+<li><strong>Find references using the @citekey in the markdown file</strong>（在 Markdown 文件中查找 @citekey 引文）：</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：这是 Reference Map 的核心功能，可以识别笔记中的引文 ID（例如 <code>@e2017deep</code>），并显示对应的文献信息。你的 Deep Ritz 方法文献（如 E 和 Yu，2017）可以通过 citekey 快速关联。</p>
+</li>
+<li>
+<p><strong>Enable clickable bibliography</strong>（启用可点击的参考文献）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：可点击的参考文献允许你直接跳转到文献详情或外部链接（例如 DOI 链接），提高文献管理的效率。</p>
+</li>
+<li>
+<p><strong>Disable citekey detection</strong>（禁用 citekey 检测）：</p>
+</li>
+<li><strong>建议</strong>：<strong>关闭（Toggle OFF）</strong>。</li>
+<li>
+<p><strong>原因</strong>：禁用 citekey 检测会让插件无法识别引文 ID，影响功能完整性。保持启用以支持你的文献管理。</p>
+</li>
+<li>
+<p><strong>Library file path</strong>（文献库文件路径）：</p>
+</li>
+<li>
+<p><strong>建议</strong>：设置本地文献库路径。</p>
+<ul>
+<li>如果你使用 Zotero，路径通常是 Zotero 导出的 BibTeX 文件（<code>.bib</code> 文件），例如 <code>C:/Users/YourName/Zotero/library.bib</code>。</li>
+<li>如果你有独立的 BibTeX 文件（包含 Deep Ritz 方法文献），可以指定该文件路径。</li>
+<li>如果路径未设置，插件将无法从本地库加载文献。</li>
+</ul>
+</li>
+<li>
+<p><strong>Auto detect updates to the library</strong>（自动检测文献库更新）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：启用自动检测可以让插件在文献库更新（例如从 Zotero 重新导出 BibTeX 文件）时自动刷新，保持文献列表最新。</p>
+</li>
+<li>
+<p><strong>Pull bibliography from Zotero</strong>（从 Zotero 拉取参考文献）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>（如果使用 Zotero）。</li>
+<li><strong>原因</strong>：你的文献列表（如 E 和 Yu，2017；Duan 等，2022）可能已经在 Zotero 中管理，启用此选项可以直接从 Zotero 拉取文献信息，避免手动维护。</li>
+</ol>
+<hr />
+<h4 id="23-zotero-integrationzotero">2.3 Zotero Integration（Zotero 集成）（未展示）</h4>
+<p>这些设置用于连接 Zotero 或其他文献管理工具。</p>
+<ol>
+<li><strong>Select libraries to include</strong>（选择包含的文献库）：</li>
+<li><strong>建议</strong>：选择你的 Zotero 文献库（例如 “My Library”）。</li>
+<li>
+<p><strong>原因</strong>：确保插件可以访问你的 Deep Ritz 方法文献。</p>
+</li>
+<li>
+<p><strong>Show or hide the link to @citekey open item in Zotero</strong>（显示或隐藏 Zotero 中的 @citekey 链接）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：启用后，你可以直接从 Obsidian 跳转到 Zotero 中的文献条目，方便查看原始文献。</p>
+</li>
+<li>
+<p><strong>Find the citekey from ID entry</strong>（从 ID 条目中查找 citekey）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：插件会根据笔记中的 ID（例如 DOI 或自定义 ID）查找对应的 citekey，适合你的文献管理流程。</p>
+</li>
+<li>
+<p><strong>Process citekeys without @ prefix</strong>（处理不带 @ 前缀的 citekey）：</p>
+</li>
+<li><strong>建议</strong>：<strong>关闭（Toggle OFF）</strong>。</li>
+<li>
+<p><strong>原因</strong>：学术引文通常使用 @ 前缀（如 <code>@e2017deep</code>），关闭此选项可以避免误识别非引文内容。</p>
+</li>
+<li>
+<p><strong>Zotero port</strong>（Zotero 端口）：</p>
+</li>
+<li><strong>当前设置</strong>：23119。</li>
+<li><strong>建议</strong>：保持默认（23119），除非你在 Zotero 中更改了端口设置。</li>
+<li><strong>原因</strong>：这是 Zotero 的默认 API 端口，用于 Obsidian 和 Zotero 之间的通信。</li>
+</ol>
+<hr />
+<h4 id="24-dynamic-list-settings">2.4 Dynamic List Settings（动态列表设置）（未展示）</h4>
+<p>这些设置用于基于关键词生成动态参考列表。</p>
+<ol>
+<li><strong>Enable dynamic reference list</strong>（启用动态参考列表）：</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：动态参考列表可以根据笔记中的关键词（如 <code>Deep Ritz</code>）自动搜索相关文献，帮助你发现新的 Deep Ritz 方法研究。</p>
+</li>
+<li>
+<p><strong>Keywords field</strong>（关键词字段）：</p>
+</li>
+<li><strong>建议</strong>：设置为 <code>keywords</code>。</li>
+<li>
+<p><strong>原因</strong>：在你的笔记 YAML 前置元数据中添加关键词字段，例如：
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>---
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>keywords: Deep Ritz, neural networks, variational methods
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>---
+</code></pre></div>
+     插件会根据这些关键词搜索文献。</p>
+</li>
+<li>
+<p><strong>Online search database</strong>（在线搜索数据库）：</p>
+</li>
+<li><strong>建议</strong>：选择 <strong>Semantic Scholar</strong>。</li>
+<li><strong>原因</strong>：Semantic Scholar 提供了学术文献的引用关系和影响力数据，适合探索 Deep Ritz 方法的引用网络。</li>
+</ol>
+<hr />
+<h4 id="25-graph-view-settings">2.5 Graph View Settings（图视图设置）（未展示）</h4>
+<p>这些设置调整引用关系图的样式。</p>
+<ol>
+<li><strong>Enable graph view</strong>（启用图视图）：</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：图视图可以可视化你的文献之间的引用关系，例如 E 和 Yu (2017) 被哪些后续文献引用（如 Duan 等，2022）。</p>
+</li>
+<li>
+<p><strong>Node size based on citation count</strong>（节点大小基于引用计数）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li>
+<p><strong>原因</strong>：引用计数较大的文献（例如奠基论文）会有更大的节点，便于快速识别重要文献。</p>
+</li>
+<li>
+<p><strong>Edge thickness based on citation strength</strong>（边厚度基于引用强度）：</p>
+</li>
+<li><strong>建议</strong>：<strong>开启（Toggle ON）</strong>。</li>
+<li><strong>原因</strong>：引用强度（例如直接引用 vs 间接引用）可以通过边厚度显示，帮助你分析文献之间的关联强度。</li>
+</ol>
+<hr />
+<h4 id="26-metadata-buttons">2.6 Metadata Buttons（元数据按钮）（部分展示）</h4>
+<p>这些设置控制引文信息的复制格式。</p>
+<ol>
+<li><strong>Metadata button one</strong>（元数据按钮 1）：</li>
+<li><strong>当前设置</strong>：<code>[bibtex]</code>。</li>
+<li><strong>建议</strong>：保持默认。</li>
+<li>
+<p><strong>原因</strong>：<code>[bibtex]</code> 格式适合直接复制 BibTeX 条目到文献管理工具（如 Zotero）。</p>
+</li>
+<li>
+<p><strong>Metadata template one</strong>（元数据模板 1）：</p>
+</li>
+<li><strong>当前设置</strong>：<code>{{authors}}, {{journal}}, {{volume}}, {{pages}}, {{year}}, {{abstract}}, {{url}}, {{pdfurl}}, {{doi}}, {{bibtex}}</code>。</li>
+<li><strong>建议</strong>：简化为 <code>{{authors}}, {{year}}, {{title}}, {{doi}}</code>。</li>
+<li>
+<p><strong>原因</strong>：简化的模板更适合快速浏览和引用，避免信息过多。</p>
+</li>
+<li>
+<p><strong>Metadata batch one</strong>（元数据批量 1）：</p>
+</li>
+<li><strong>建议</strong>：<strong>关闭（Toggle OFF）</strong>。</li>
+<li>
+<p><strong>原因</strong>：批量复制通常用于导出大量引文，你的文献管理需求更偏向单篇操作。</p>
+</li>
+<li>
+<p><strong>Metadata button two</strong>（元数据按钮 2）：</p>
+</li>
+<li><strong>建议</strong>：设置为 <code>[markdown]</code>。</li>
+<li>
+<p><strong>原因</strong>：<code>[markdown]</code> 格式适合直接在 Obsidian 笔记中插入引文。</p>
+</li>
+<li>
+<p><strong>Metadata template two</strong>（元数据模板 2）：</p>
+</li>
+<li><strong>当前设置</strong>：<code>[{{title}}]({{url}}) by {{authors}}, {{year}}</code>。</li>
+<li><strong>建议</strong>：保持默认。</li>
+<li><strong>原因</strong>：此模板适合生成带链接的 Markdown 格式引文，便于快速插入笔记。</li>
+</ol>
+<hr />
+<hr />
+<h3 id="3-reference-map">步骤 3：使用 Reference Map 插件</h3>
+<p>Reference Map 插件提供了三种主要功能：侧边栏视图、在线搜索和关系图视图。以下是如何使用它们：</p>
+<h4 id="31-reference-map-sidebar">3.1 使用侧边栏视图（Reference Map Sidebar）</h4>
+<ul>
+<li><strong>功能</strong>：在侧边栏中显示当前文档的参考文献信息，包括引用的论文（cited）和被引用的论文（citing）。</li>
+<li><strong>操作步骤</strong>：</li>
+<li>打开一个笔记（Markdown 文件）。</li>
+<li>在命令面板中（快捷键 <code>Ctrl/Cmd + P</code>），输入并选择 <strong>Reference Map: Open Reference Map Sidebar</strong>。</li>
+<li>侧边栏会显示与当前文档相关的参考文献卡片（Index Cards 和 Citing/Cited Cards）。<ul>
+<li><strong>Index Cards</strong>：基于文档中引用的 ID（例如 DOI 或自定义 ID）显示参考文献。</li>
+<li><strong>Citing/Cited Cards</strong>：显示该文献引用的论文和被引用的论文列表，支持搜索和排序。</li>
+</ul>
+</li>
+<li><strong>添加引文</strong>：</li>
+<li>在你的笔记中，使用特定的格式添加引文 ID，例如 <code>[#ref123]</code> 或 <code>@article{ref123}</code>。</li>
+<li>插件会自动识别这些 ID，并从本地库或在线数据库中提取详细信息。</li>
+</ul>
+<h4 id="32-reference-map-search">3.2 在线搜索并插入参考文献（Reference Map Search）</h4>
+<ul>
+<li><strong>功能</strong>：从在线数据库（如 Semantic Scholar）搜索文献，并插入到你的笔记中。</li>
+<li><strong>操作步骤</strong>：</li>
+<li>打开命令面板（<code>Ctrl/Cmd + P</code>）。</li>
+<li>输入并选择 <strong>Reference Map: Search for References Online</strong>。</li>
+<li>在弹出的搜索框中输入关键词（例如 <code>Deep Learning</code>）。</li>
+<li>插件会从在线数据库中返回相关文献列表。</li>
+<li>选择一条文献，点击插入，插件会将文献信息以 Markdown 格式添加到当前光标位置。<ul>
+<li>示例插入格式：
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@article{ref123,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  title={Deep Learning},
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  author={LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  year={2015},
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  doi={10.1038/nature14539}
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>}
+</code></pre></div></li>
+</ul>
+</li>
+<li>插入后，侧边栏会自动更新，显示该文献的相关信息。</li>
+</ul>
+<h4 id="33-reference-map-graph">3.3 使用关系图视图（Reference Map Graph）</h4>
+<ul>
+<li><strong>功能</strong>：可视化参考文献之间的引用关系，形成一个动态的关系图。</li>
+<li><strong>操作步骤</strong>：</li>
+<li>打开命令面板（<code>Ctrl/Cmd + P</code>）。</li>
+<li>输入并选择 <strong>Reference Map: Open Reference Map Graph</strong>。</li>
+<li>插件会生成一个图视图，显示当前文档中引用的所有文献，以及它们之间的引用关系。<ul>
+<li>节点表示文献，连线表示引用关系（cited/citing）。</li>
+<li>你可以点击节点查看详细信息，或拖动节点调整视图。</li>
+</ul>
+</li>
+<li><strong>限制</strong>：关系图目前只显示学术论文的引用关系，不支持非学术资源（如视频、网页、推文等）。</li>
+</ul>
+<h4 id="34">3.4 动态参考列表</h4>
+<ul>
+<li><strong>功能</strong>：根据文件名或关键词自动生成参考文献列表。</li>
+<li><strong>操作步骤</strong>：</li>
+<li>确保在插件设置中启用了 <strong>Dynamic Reference List</strong>。</li>
+<li>在笔记的 YAML 前置元数据中添加关键词，例如：
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>---
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>keywords: deep learning, neural networks
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>---
+</code></pre></div></li>
+<li>打开侧边栏视图，插件会根据关键词（如 <code>deep+learning</code>）搜索并显示相关文献。</li>
+<li><strong>注意</strong>：由于在线数据库会不断更新，动态列表的内容可能每次打开时都会变化，尤其是通用关键词（如 <code>machine learning</code>）。</li>
+</ul>
+<hr />
+<h3 id="4-zotero">步骤 4：结合文献管理工具（如 Zotero）</h3>
+<p>如果你使用 Zotero 管理文献，可以通过以下步骤增强 Reference Map 的功能：
+1. <strong>安装 Zotero 插件</strong>：
+   - 在 Obsidian 中安装 <strong>Zotero Integration</strong> 插件（或类似的插件，如 Citations 插件）。
+   - 配置 Zotero 数据库路径或 API 密钥。
+2. <strong>导入 Zotero 文献</strong>：
+   - 使用 Zotero Integration 插件，将 Zotero 中的文献以 Markdown 格式导入 Obsidian。
+   - 导入的文献会包含唯一的 citekey（例如 <code>@lecun2015deep</code>）。
+3. <strong>在 Reference Map 中使用</strong>：
+   - 在笔记中引用 Zotero 的 citekey，例如 <code>[@lecun2015deep]</code>。
+   - Reference Map 会自动识别这些 citekey，并在侧边栏中显示详细信息。</p>
+<hr />
+<h3 id="5-deep-ritz">步骤 5：结合你的 Deep Ritz 方法研究</h3>
+<p>根据你之前的文献列表（关于 Deep Ritz 方法和相关研究），我们可以用 Reference Map 插件整理这些文献，并探索它们之间的引用关系。</p>
+<h4 id="deep-ritz">示例操作：整理 Deep Ritz 方法文献</h4>
+<ol>
+<li><strong>创建文献笔记</strong>：</li>
+<li>为每篇文献创建一个 Markdown 文件，文件名可以是文献标题，例如 <code>E and Yu - 2017 - The Deep Ritz Method.md</code>。</li>
+<li>在文件的前置元数据中添加文献信息，例如：
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>---
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>title: The Deep Ritz Method: A Deep Learning-Based Numerical Algorithm for Solving Variational Problems
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>authors: E, Weinan and Yu, Bing
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>year: 2017
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>doi: 10.1007/s40304-018-0147-7
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>keywords: Deep Ritz, variational problems, neural networks
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>---
+</code></pre></div></li>
+<li><strong>使用动态参考列表</strong>：</li>
+<li>打开 <code>E and Yu - 2017 - The Deep Ritz Method.md</code> 文件。</li>
+<li>在 Reference Map 侧边栏中，插件会根据关键词（如 <code>Deep Ritz</code>）搜索并显示相关文献，例如：<ul>
+<li>Duan 等 (2022) - Convergence Rate Analysis for Deep Ritz Method。</li>
+<li>Uriarte 等 (2023) - A Deep Double Ritz Method (D²RM)。</li>
+</ul>
+</li>
+<li><strong>探索引用关系</strong>：</li>
+<li>打开 Reference Map Graph 视图，查看 E 和 Yu (2017) 这篇奠基论文的引用网络。</li>
+<li>你可能会发现它被后续文献（如 Duan 等，2022）引用，或者它引用了其他早期文献。</li>
+</ol>
+<h4 id="_1">结合你的思维导图</h4>
+<ul>
+<li><strong>导出关系图</strong>：Reference Map 的关系图可以帮助你扩展思维导图的“综述与对比”分支。例如，你可以添加 E 和 Yu (2017) 的引用网络作为子分支。</li>
+<li><strong>动态更新</strong>：使用动态参考列表功能，定期检查与 <code>Deep Ritz</code> 相关的最新文献，更新你的思维导图。</li>
+</ul>
+<hr />
+<h3 id="_2">注意事项</h3>
+<ol>
+<li><strong>动态列表的稳定性</strong>：</li>
+<li>动态参考列表可能会因在线数据库更新而变化，建议定期备份你的文献笔记。</li>
+<li><strong>性能问题</strong>：</li>
+<li>如果你的 vault 中有大量文献，Reference Map 的搜索和图视图可能会变慢。建议优化文献数量，或只在特定笔记中使用插件。</li>
+<li><strong>非学术资源</strong>：</li>
+<li>Reference Map 的关系图不支持非学术资源（如网页、视频）。如果需要管理这类资源，可以使用其他插件（如 Obsidian Web Clipper）。</li>
+</ol>
+<hr />
+<h3 id="_3">总结</h3>
+<p>通过以上步骤，你已经学会了如何安装和使用 Obsidian 的 Reference Map 插件：
+- <strong>安装</strong>：从社区插件市场或手动安装 Reference Map 插件。
+- <strong>配置</strong>：设置参考文献来源、元数据模板和动态列表。
+- <strong>使用</strong>：通过侧边栏视图、在线搜索和关系图视图管理文献。
+- <strong>结合研究</strong>：整理 Deep Ritz 方法的文献，并探索引用关系，扩展你的思维导图。</p>
+<p>如果你需要进一步帮助，比如如何将 Reference Map 的引用关系图嵌入到你的笔记中，或者如何用它生成文献综述，可以告诉我，我会继续协助你！</p>
+<p>感谢你提供的 Reference Map 插件界面截图！从图片中可以看到 Reference Map 的部分设置选项，包括 <strong>General Settings</strong> 和 <strong>Static List Settings</strong>，但还有一些选项未展示（例如 Zotero 集成、动态参考列表、图视图样式等）。结合你的需求（管理 Deep Ritz 方法相关文献），我将详细指导你如何配置 Reference Map 插件，确保它适合你的学术研究和文献管理需求。</p>
+<hr />
+<h3 id="3-deep-ritz">3. 应用配置到你的 Deep Ritz 方法研究</h3>
+<h4 id="31">3.1 整理文献笔记</h4>
+<ol>
+<li><strong>创建文献笔记</strong>：</li>
+<li>为每篇文献创建一个 Markdown 文件，例如 <code>E and Yu - 2017 - The Deep Ritz Method.md</code>。</li>
+<li>
+<p>添加 YAML 前置元数据：
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>---
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>title: The Deep Ritz Method: A Deep Learning-Based Numerical Algorithm for Solving Variational Problems
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>authors: E, Weinan and Yu, Bing
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>year: 2017
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>doi: 10.1007/s40304-018-0147-7
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>keywords: Deep Ritz, variational problems, neural networks
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>citekey: e2017deep
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>---
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>引用文献</strong>：</p>
+</li>
+<li>在你的笔记中添加引文，例如：
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>The Deep Ritz Method was proposed by E and Yu (@e2017deep).
+</code></pre></div></li>
+<li>Reference Map 会自动识别 <code>@e2017deep</code>，并在侧边栏显示文献信息。</li>
+</ol>
+<h4 id="32">3.2 使用动态参考列表</h4>
+<ul>
+<li>在笔记中添加关键词（如 <code>Deep Ritz</code>），Reference Map 会根据这些关键词搜索相关文献。</li>
+<li>示例：搜索 <code>Deep Ritz</code>，可能会找到 Duan 等 (2022) 和 Uriarte 等 (2023) 的文献。</li>
+</ul>
+<h4 id="33">3.3 探索引用关系</h4>
+<ul>
+<li>打开 Reference Map Graph 视图，查看 E 和 Yu (2017) 的引用网络。</li>
+<li>你可能会发现它被后续文献引用（如 Duan 等，2022），或者它引用了其他早期文献。</li>
+</ul>
+<h4 id="34-zotero">3.4 结合 Zotero（如果使用）</h4>
+<ul>
+<li>从 Zotero 导出 Deep Ritz 方法文献为 BibTeX 文件（<code>library.bib</code>）。</li>
+<li>在 <strong>Library file path</strong> 中指定路径，插件会自动加载这些文献。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

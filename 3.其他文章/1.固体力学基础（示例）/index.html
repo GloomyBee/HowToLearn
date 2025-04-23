@@ -1,0 +1,2776 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../2.%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/02.MkDocs%20%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>1.固体力学基础（示例文档） - HowToLearn</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HowToLearn" class="md-header__button md-logo" aria-label="HowToLearn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HowToLearn
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.固体力学基础（示例文档）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  HowToLearn 文档简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1.%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/%E5%A6%82%E4%BD%95%E5%90%91%E4%BB%96%E4%BA%BA%E7%9A%84%20GitHub%20%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9/" class="md-tabs__link">
+          
+  
+  
+  1.软件使用教程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2.%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/01.Reference%20Map%20%E6%8F%92%E4%BB%B6%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89/" class="md-tabs__link">
+          
+  
+  
+  2.软件安装与环境配置
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  3.其他文章
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HowToLearn" class="md-nav__button md-logo" aria-label="HowToLearn" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HowToLearn
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HowToLearn 文档简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    1.软件使用教程
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1.软件使用教程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/%E5%A6%82%E4%BD%95%E5%90%91%E4%BB%96%E4%BA%BA%E7%9A%84%20GitHub%20%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4%E6%9B%B4%E6%94%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    项目推送文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    2.软件安装与环境配置
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            2.软件安装与环境配置
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/01.Reference%20Map%20%E6%8F%92%E4%BB%B6%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    01.Reference Map 插件（示例）
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/02.MkDocs%20%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    02.MkDocs 部署文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3.其他文章
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3.其他文章
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    1.固体力学基础（示例文档）
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.固体力学基础（示例文档）
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 弹性力学基本方程（矩阵形式）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 弹性力学基本方程（矩阵形式）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 几何方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 物理方程（本构关系）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 平衡方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 边界条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      位移边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      应力边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      自由边界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      边界条件的完整性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 初始条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 初始条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态问题的适用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 能量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 能量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 应变能密度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 总应变能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 外力做功
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.4 总位能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#165" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.5 余能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.弹性力学基本方程（张量形式）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.弹性力学基本方程（张量形式）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1几何方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2物理方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3平衡方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 边界条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 位移边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 应力边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 边界条件完整性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 初始条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 初始条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.1 初始位移
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.2 初始速度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 能量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 能量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.1 应变能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.2 外力做功
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.3 总位能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.4 余能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.薄板基本方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.薄板基本方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 薄板的假设
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 薄板的几何方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 薄板的几何方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 广义应变和曲率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 广义微分算子 \(L\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 薄板的物理方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 薄板的物理方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 内力表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 应力与弯矩的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 广义力-广义应变关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 公式整体意义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 薄板的平衡方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 薄板的平衡方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 平面力平衡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 弯矩平衡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#241_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 垂直于中面的平衡方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 高阶微分方程形式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 边界条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.1 边界条件的建立
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.2 弯矩的边界投影关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.2 弯矩的边界投影关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-m_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 法向弯矩 \(M_n\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-m_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 切向弯矩 \(M_s\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.3 剪力的边界表达
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.3 剪力的边界表达">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算公式：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.4 弯矩与挠度的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#255" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.5 边界条件的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.5 边界条件的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 第一类边界条件（几何边界条件）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 第二类边界条件（内力边界条件）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 第三类边界条件（混合边界条件）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#256" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.6 总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6基础条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 能量原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 能量原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.1 应变能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.2 总位能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 弹性力学基本方程（矩阵形式）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 弹性力学基本方程（矩阵形式）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 几何方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 物理方程（本构关系）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 平衡方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 边界条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      位移边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      应力边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      自由边界
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      边界条件的完整性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 初始条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 初始条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态问题的适用场景
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 能量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 能量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 应变能密度
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 总应变能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 外力做功
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.4 总位能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#165" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.5 余能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.弹性力学基本方程（张量形式）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.弹性力学基本方程（张量形式）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1几何方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2物理方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3平衡方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 边界条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 位移边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 应力边界条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 边界条件完整性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 初始条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 初始条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.1 初始位移
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.2 初始速度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 能量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 能量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.1 应变能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.2 外力做功
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.3 总位能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#264" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6.4 余能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.薄板基本方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.薄板基本方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 薄板的假设
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 薄板的几何方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 薄板的几何方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 广义应变和曲率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 广义微分算子 \(L\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 薄板的物理方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 薄板的物理方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.1 内力表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 应力与弯矩的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.3 广义力-广义应变关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.4 公式整体意义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 薄板的平衡方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 薄板的平衡方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 平面力平衡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 弯矩平衡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#241_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 垂直于中面的平衡方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 高阶微分方程形式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 边界条件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 边界条件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.1 边界条件的建立
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.2 弯矩的边界投影关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.2 弯矩的边界投影关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-m_n" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 法向弯矩 \(M_n\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-m_s" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 切向弯矩 \(M_s\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.3 剪力的边界表达
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.3 剪力的边界表达">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算公式：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#254" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.4 弯矩与挠度的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#255" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.5 边界条件的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5.5 边界条件的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 第一类边界条件（几何边界条件）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 第二类边界条件（内力边界条件）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 第三类边界条件（混合边界条件）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#256" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5.6 总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6基础条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 能量原理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 能量原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.1 应变能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7.2 总位能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">1.固体力学基础（示例文档）</h1>
+<p>弹性力学基本方程的详细笔记，涵盖了几何方程、物理方程、平衡方程、边界条件、初始条件，以及能量（应变能、余能和总位能）。</p>
+<hr />
+<h2 id="1_1">1. 弹性力学基本方程（矩阵形式）</h2>
+<h3 id="11">1.1 几何方程</h3>
+<p>几何方程描述应变 <span class="arithmatex">\(\boldsymbol{\varepsilon}\)</span> 与位移 <span class="arithmatex">\(\boldsymbol{u}\)</span> 之间的关系，采用矩阵形式：
+$$
+\boldsymbol{\varepsilon} = \boldsymbol{D} \boldsymbol{u}
+$$</p>
+<p>其中：
+- <span class="arithmatex">\(\boldsymbol{\varepsilon} = \begin{bmatrix} \varepsilon_{xx} \\ \varepsilon_{yy} \\ \varepsilon_{zz} \\ \gamma_{xy} \\ \gamma_{yz} \\ \gamma_{zx} \end{bmatrix}\)</span> 为应变矢量。
+- <span class="arithmatex">\(\boldsymbol{u} = \begin{bmatrix} u \\ v \\ w \end{bmatrix}\)</span> 为位移矢量。
+- <span class="arithmatex">\(\boldsymbol{D}\)</span> 为几何算子矩阵：
+$$
+\boldsymbol{D} = 
+\begin{bmatrix}
+\frac{\partial}{\partial x} &amp; 0 &amp; 0 \
+0 &amp; \frac{\partial}{\partial y} &amp; 0 \
+0 &amp; 0 &amp; \frac{\partial}{\partial z} \
+\frac{\partial}{\partial y} &amp; \frac{\partial}{\partial x} &amp; 0 \
+0 &amp; \frac{\partial}{\partial z} &amp; \frac{\partial}{\partial y} \
+\frac{\partial}{\partial z} &amp; 0 &amp; \frac{\partial}{\partial x}
+\end{bmatrix}.
+$$
+解释
+几何方程反映了材料点因位移场产生的局部变形程度。</p>
+<hr />
+<h3 id="12">1.2 物理方程（本构关系）</h3>
+<p>物理方程将应力 <span class="arithmatex">\(\boldsymbol{\sigma}\)</span> 和应变 <span class="arithmatex">\(\boldsymbol{\varepsilon}\)</span> 通过材料的本构关系连接起来：
+$$
+\boldsymbol{\sigma} = \boldsymbol{C} \boldsymbol{\varepsilon}
+$$</p>
+<p>其中：
+- <span class="arithmatex">\(\boldsymbol{\sigma} = \begin{bmatrix} \sigma_{xx} \\ \sigma_{yy} \\ \sigma_{zz} \\ \tau_{xy} \\ \tau_{yz} \\ \tau_{zx} \end{bmatrix}\)</span> 为应力矢量。
+- <span class="arithmatex">\(\boldsymbol{\varepsilon}\)</span> 同上。
+- <span class="arithmatex">\(\boldsymbol{C}\)</span> 为材料的弹性矩阵（6×6对称矩阵，线性弹性材料下由杨氏模量 <span class="arithmatex">\(E\)</span> 和泊松比 <span class="arithmatex">\(\nu\)</span> 确定）。</p>
+<p>对于各向同性材料：
+$$
+\boldsymbol{C} = \frac{E}{(1+\nu)(1-2\nu)}
+\begin{bmatrix}
+1-\nu &amp; \nu &amp; \nu &amp; 0 &amp; 0 &amp; 0 \
+\nu &amp; 1-\nu &amp; \nu &amp; 0 &amp; 0 &amp; 0 \
+\nu &amp; \nu &amp; 1-\nu &amp; 0 &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; \frac{1-2\nu}{2} &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1-2\nu}{2} &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1-2\nu}{2}
+\end{bmatrix}.
+$$
+解释
+物理方程体现了材料特性，例如各向同性和弹性线性行为。</p>
+<hr />
+<h3 id="13">1.3 平衡方程</h3>
+<p>平衡方程表示力学平衡状态下应力满足的条件：
+$$
+\boldsymbol{D}^\mathrm{T} \boldsymbol{\sigma} + \boldsymbol{b} = \boldsymbol{0}
+$$</p>
+<p>其中：
+- <span class="arithmatex">\(\boldsymbol{D}^\mathrm{T}\)</span> 是几何算子矩阵的转置。
+- <span class="arithmatex">\(\boldsymbol{b} = \begin{bmatrix} b_x \\ b_y \\ b_z \end{bmatrix}\)</span> 为体力矢量。</p>
+<p>分量形式为：
+$$
+\begin{aligned}
+&amp;\frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \tau_{xy}}{\partial y} + \frac{\partial \tau_{zx}}{\partial z} + b_x = 0, \
+&amp;\frac{\partial \tau_{xy}}{\partial x} + \frac{\partial \sigma_{yy}}{\partial y} + \frac{\partial \tau_{yz}}{\partial z} + b_y = 0, \
+&amp;\frac{\partial \tau_{zx}}{\partial x} + \frac{\partial \tau_{yz}}{\partial y} + \frac{\partial \sigma_{zz}}{\partial z} + b_z = 0.
+\end{aligned}
+$$
+解释
+平衡方程反映了力学系统的力平衡状态。</p>
+<hr />
+<h3 id="14">1.4 边界条件</h3>
+<p>边界条件是弹性力学问题中不可缺少的一部分，分为<strong>位移边界条件</strong>和<strong>应力边界条件</strong>。</p>
+<h4 id="_1">位移边界条件</h4>
+<p>在边界 <span class="arithmatex">\(\Gamma_u\)</span> 上，位移是已知的。数学形式为：
+$$
+\boldsymbol{u} = \boldsymbol{u}_0 \quad \text{在 } \Gamma_u \text{ 上}.
+$$
+其中：
+- <span class="arithmatex">\(\boldsymbol{u}_0\)</span> 是预设的位移值，通常来源于设计需求或实际问题的约束条件。</p>
+<h4 id="_2">应力边界条件</h4>
+<p>在边界 <span class="arithmatex">\(\Gamma_t\)</span> 上，应力引起的表面力 <span class="arithmatex">\(\boldsymbol{t}\)</span> 是已知的。表面力通过应力张量与法向量关联：
+$$
+\boldsymbol{t} = \boldsymbol{n}^\mathrm{T} \boldsymbol{\sigma} \quad \text{在 } \Gamma_t \text{ 上}.
+$$
+其中：
+- <span class="arithmatex">\(\boldsymbol{n}\)</span> 是边界 <span class="arithmatex">\(\Gamma_t\)</span> 的单位法向量。
+- <span class="arithmatex">\(\boldsymbol{\sigma}\)</span> 是应力张量。</p>
+<p>具体形式为：
+$$
+\begin{aligned}
+t_x &amp;= \sigma_{xx} n_x + \tau_{xy} n_y + \tau_{zx} n_z, \
+t_y &amp;= \tau_{xy} n_x + \sigma_{yy} n_y + \tau_{yz} n_z, \
+t_z &amp;= \tau_{zx} n_x + \tau_{yz} n_y + \sigma_{zz} n_z.
+\end{aligned}
+$$</p>
+<h4 id="_3">自由边界</h4>
+<p>当 <span class="arithmatex">\(\Gamma_t\)</span> 是自由边界（无外力作用时），有：
+$$
+\boldsymbol{t} = \boldsymbol{0}.
+$$</p>
+<h4 id="_4">边界条件的完整性</h4>
+<p>对于任一弹性体，<span class="arithmatex">\(\Gamma_u \cup \Gamma_t = \Gamma\)</span> 且 <span class="arithmatex">\(\Gamma_u \cap \Gamma_t = \emptyset\)</span>，即位移和应力条件在边界上互补且不重叠。</p>
+<hr />
+<h3 id="15">1.5 初始条件</h3>
+<p>在动态问题中（例如，波动问题或动力学分析），需要给出初始时刻的条件。初始条件包括：
+1. <strong>初始位移</strong>：初始时刻材料点的位置。
+   $$ \boldsymbol{u}(x, y, z, t=0) = \boldsymbol{u}_0(x, y, z). $$</p>
+<ol>
+<li><strong>初始速度</strong>：初始时刻材料点的速度分布。
+   $$ \frac{\partial \boldsymbol{u}}{\partial t}(x, y, z, t=0) = \boldsymbol{v}_0(x, y, z). $$</li>
+</ol>
+<h4 id="_5">动态问题的适用场景</h4>
+<ul>
+<li>地震波传播：初始位移可能表示地表的变形。</li>
+<li>机械振动：初始速度表示外部作用力激励的速度分布。</li>
+</ul>
+<p>这些条件为求解动态方程（如波动方程或Navier方程）提供了完整的描述。</p>
+<hr />
+<h3 id="16">1.6 能量</h3>
+<p>在弹性力学中，能量分析是研究系统稳定性和求解变分问题的重要手段。</p>
+<h4 id="161">1.6.1 应变能密度</h4>
+<p>应变能密度表示单元体积内存储的弹性变形能量：
+$$
+W = \frac{1}{2} \boldsymbol{\varepsilon}^\mathrm{T} \boldsymbol{\sigma}.
+$$</p>
+<p>展开后（以张量形式）：
+$$
+W = \frac{1}{2} \left( \sigma_{xx} \varepsilon_{xx} + \sigma_{yy} \varepsilon_{yy} + \sigma_{zz} \varepsilon_{zz} + \tau_{xy} \gamma_{xy} + \tau_{yz} \gamma_{yz} + \tau_{zx} \gamma_{zx} \right).
+$$
+各向同性材料的应变能
+对于各向同性材料：
+$$
+W = \frac{1}{2} \lambda \left( \text{tr}(\boldsymbol{\varepsilon}) \right)^2 + \mu \, \text{tr}(\boldsymbol{\varepsilon}^2),
+$$
+其中 <span class="arithmatex">\(\lambda\)</span> 和 <span class="arithmatex">\(\mu\)</span> 是拉梅常数，<span class="arithmatex">\(\text{tr}\)</span> 表示矩阵的迹。</p>
+<hr />
+<h4 id="162">1.6.2 总应变能</h4>
+<p>总应变能是弹性体在整个体积 <span class="arithmatex">\(V\)</span> 上存储的弹性变形能量：
+$$
+U = \int_V W \, \mathrm{d}V.
+$$</p>
+<hr />
+<h4 id="163">1.6.3 外力做功</h4>
+<p>外力对弹性体做的功包括体力和表面力两部分：
+$$
+W_{\text{ext}} = \int_V \boldsymbol{b}^\mathrm{T} \boldsymbol{u} \, \mathrm{d}V + \int_{\Gamma_t} \boldsymbol{t}^\mathrm{T} \boldsymbol{u} \, \mathrm{d}\Gamma.
+$$</p>
+<hr />
+<h4 id="164">1.6.4 总位能</h4>
+<p>总位能（或势能）<span class="arithmatex">\(\Pi\)</span> 定义为总应变能与外力做功的代数和：
+$$
+\Pi = U - W_{\text{ext}}.
+$$</p>
+<p>展开后：
+$$
+\Pi = \int_V \frac{1}{2} \boldsymbol{\varepsilon}^\mathrm{T} \boldsymbol{\sigma} \, \mathrm{d}V - \int_V \boldsymbol{b}^\mathrm{T} \boldsymbol{u} \, \mathrm{d}V - \int_{\Gamma_t} \boldsymbol{t}^\mathrm{T} \boldsymbol{u} \, \mathrm{d}\Gamma.
+$$</p>
+<p>意义
+- <span class="arithmatex">\(\Pi\)</span> 最小化原理（变分原理）：在平衡状态下，总位能 <span class="arithmatex">\(\Pi\)</span> 达到极小值。
+- 该原理是有限元法的理论基础。</p>
+<hr />
+<h4 id="165">1.6.5 余能</h4>
+<p>余能是总应变能减去材料的恢复功，反映了材料不可恢复的塑性形变部分。在弹性阶段，余能为零；塑性阶段，余能为：
+$$
+W_{\text{p}} = U - \int_V \sigma \varepsilon_{\text{e}} \, \mathrm{d}V,
+$$
+其中 <span class="arithmatex">\(\varepsilon_{\text{e}}\)</span> 表示弹性应变。</p>
+<hr />
+<h2 id="2">2.弹性力学基本方程（张量形式）</h2>
+<hr />
+<h3 id="21">2.1几何方程</h3>
+<p>几何方程描述应变张量 <span class="arithmatex">\(\boldsymbol{\varepsilon}\)</span> 与位移矢量 <span class="arithmatex">\(\boldsymbol{u}\)</span> 之间的关系：</p>
+<div class="arithmatex">\[
+\varepsilon_{ij} = \frac{1}{2} \left( \frac{\partial u_i}{\partial x_j} + \frac{\partial u_j}{\partial x_i} \right), \quad i, j = 1, 2, 3.
+\]</div>
+<p>其中：
+- <span class="arithmatex">\(\boldsymbol{\varepsilon} = [\varepsilon_{ij}]\)</span> 是对称的二阶张量，表示应变。
+- <span class="arithmatex">\(\boldsymbol{u} = [u_i]\)</span> 是位移矢量。
+- <span class="arithmatex">\(x_j\)</span> 是空间坐标。</p>
+<p>展开形式：
+$$
+\begin{aligned}
+\varepsilon_{11} &amp;= \frac{\partial u_1}{\partial x_1}, \quad 
+\varepsilon_{22} = \frac{\partial u_2}{\partial x_2}, \quad 
+\varepsilon_{33} = \frac{\partial u_3}{\partial x_3}, \
+\varepsilon_{12} &amp;= \frac{1}{2} \left( \frac{\partial u_1}{\partial x_2} + \frac{\partial u_2}{\partial x_1} \right), \quad
+\varepsilon_{13} = \frac{1}{2} \left( \frac{\partial u_1}{\partial x_3} + \frac{\partial u_3}{\partial x_1} \right), \quad
+\varepsilon_{23} = \frac{1}{2} \left( \frac{\partial u_2}{\partial x_3} + \frac{\partial u_3}{\partial x_2} \right).
+\end{aligned}
+$$</p>
+<p>几何方程的意义：
+- <strong>对称性</strong>：<span class="arithmatex">\(\varepsilon_{ij} = \varepsilon_{ji}\)</span>，这反映了材料点的形变特性是无旋的。
+- <strong>物理意义</strong>：<span class="arithmatex">\(\varepsilon_{ii}\)</span>（主应变）描述正向拉伸或压缩，<span class="arithmatex">\(\varepsilon_{ij} \, (i \neq j)\)</span>（剪切应变）描述切向变形。</p>
+<hr />
+<h3 id="22">2.2物理方程</h3>
+<p>物理方程建立了应力张量 <span class="arithmatex">\(\boldsymbol{\sigma}\)</span> 与应变张量 <span class="arithmatex">\(\boldsymbol{\varepsilon}\)</span> 的关系，称为本构关系。</p>
+<p>对于线性弹性、各向同性材料：
+$$
+\sigma_{ij} = \lambda \, \delta_{ij} \, \varepsilon_{kk} + 2\mu \, \varepsilon_{ij},
+$$
+其中：
+- <span class="arithmatex">\(\boldsymbol{\sigma} = [\sigma_{ij}]\)</span> 是对称应力张量。
+- <span class="arithmatex">\(\lambda, \mu\)</span> 是拉梅常数，与材料的弹性模量 <span class="arithmatex">\(E\)</span> 和泊松比 <span class="arithmatex">\(\nu\)</span> 相关：
+  $$
+  \lambda = \frac{E \nu}{(1+\nu)(1-2\nu)}, \quad \mu = \frac{E}{2(1+\nu)}.
+  $$
+- <span class="arithmatex">\(\delta_{ij}\)</span> 是克罗内克符号，<span class="arithmatex">\(\delta_{ij} = 1\)</span> 当 <span class="arithmatex">\(i = j\)</span>，否则 <span class="arithmatex">\(\delta_{ij} = 0\)</span>。</p>
+<p>展开形式：
+$$
+\begin{aligned}
+\sigma_{11} &amp;= \lambda (\varepsilon_{11} + \varepsilon_{22} + \varepsilon_{33}) + 2\mu \varepsilon_{11}, \
+\sigma_{12} &amp;= 2\mu \varepsilon_{12}, \quad \sigma_{13} = 2\mu \varepsilon_{13}, \quad \sigma_{23} = 2\mu \varepsilon_{23}.
+\end{aligned}
+$$</p>
+<p>本构关系的意义：
+- <strong>线性关系</strong>：描述了小变形下应力与应变的线性比例关系。
+- <strong>各向同性</strong>：材料属性在所有方向上相同，因此 <span class="arithmatex">\(\lambda, \mu\)</span> 与方向无关。</p>
+<hr />
+<h3 id="23">2.3平衡方程</h3>
+<p>平衡方程描述弹性体的静力学平衡条件：
+$$
+\frac{\partial \sigma_{ij}}{\partial x_j} + b_i = 0, \quad i = 1, 2, 3.
+$$</p>
+<p>其中：
+- <span class="arithmatex">\(\boldsymbol{\sigma}\)</span> 是应力张量。
+- <span class="arithmatex">\(\boldsymbol{b} = [b_i]\)</span> 是单位体积上的体力（如重力或惯性力）。</p>
+<p>展开形式：
+$$
+\begin{aligned}
+\frac{\partial \sigma_{11}}{\partial x_1} + \frac{\partial \sigma_{12}}{\partial x_2} + \frac{\partial \sigma_{13}}{\partial x_3} + b_1 &amp;= 0, \
+\frac{\partial \sigma_{21}}{\partial x_1} + \frac{\partial \sigma_{22}}{\partial x_2} + \frac{\partial \sigma_{23}}{\partial x_3} + b_2 &amp;= 0, \
+\frac{\partial \sigma_{31}}{\partial x_1} + \frac{\partial \sigma_{32}}{\partial x_2} + \frac{\partial \sigma_{33}}{\partial x_3} + b_3 &amp;= 0.
+\end{aligned}
+$$</p>
+<p>平衡方程的意义：
+- <strong>力平衡</strong>：各点的内力和外力处于平衡。
+- <strong>对称性</strong>：由于 <span class="arithmatex">\(\sigma_{ij} = \sigma_{ji}\)</span>，力矩平衡天然满足。</p>
+<hr />
+<h3 id="24">2.4 边界条件</h3>
+<h4 id="241">2.4.1 位移边界条件</h4>
+<p>位移边界条件规定弹性体在某些边界上的位移已知。其数学形式为：
+$$
+u_i = u_i^0 \quad \text{在 } \Gamma_u,
+$$
+其中：
+- <span class="arithmatex">\(u_i^0\)</span> 是边界 <span class="arithmatex">\(\Gamma_u\)</span> 上的已知位移。
+- <span class="arithmatex">\(\Gamma_u\)</span> 是位移边界。</p>
+<p>实际意义：
+- 描述某些边界的固定或预设变形。例如，在悬臂梁的固定端，<span class="arithmatex">\(u_i = 0\)</span>。</p>
+<p>应用场景：
+- 固定边界：<span class="arithmatex">\(u_i = 0\)</span> 表示无位移。
+- 预变形边界：<span class="arithmatex">\(u_i = u_i^0\)</span> 表示施加特定变形。</p>
+<hr />
+<h4 id="242">2.4.2 应力边界条件</h4>
+<p>应力边界条件规定弹性体在某些边界上的表面力密度 <span class="arithmatex">\(\boldsymbol{t}\)</span> 已知。其数学形式为：
+$$
+\sigma_{ij} n_j = t_i^0 \quad \text{在 } \Gamma_t,
+$$
+其中：
+- <span class="arithmatex">\(\sigma_{ij}\)</span> 是应力张量。
+- <span class="arithmatex">\(n_j\)</span> 是边界 <span class="arithmatex">\(\Gamma_t\)</span> 的法向量。
+- <span class="arithmatex">\(t_i^0\)</span> 是边界 <span class="arithmatex">\(\Gamma_t\)</span> 上已知的表面力密度。</p>
+<p>实际意义：
+- 描述外力施加的作用。例如，均匀受拉的杆在自由端的表面力为已知的拉力。</p>
+<p>应用场景：
+- 自由边界：<span class="arithmatex">\(\boldsymbol{t} = 0\)</span>。
+- 施加力边界：<span class="arithmatex">\(\boldsymbol{t} = t_i^0\)</span>，如分布载荷。</p>
+<hr />
+<h4 id="243">2.4.3 边界条件完整性</h4>
+<p>边界 <span class="arithmatex">\(\Gamma\)</span> 被划分为两部分：
+$$
+\Gamma = \Gamma_u \cup \Gamma_t, \quad \Gamma_u \cap \Gamma_t = \emptyset.
+$$</p>
+<p>实际意义：
+- 任意边界点要么位移已知（<span class="arithmatex">\(\Gamma_u\)</span>），要么表面力已知（<span class="arithmatex">\(\Gamma_t\)</span>），确保边界条件的完整性。</p>
+<hr />
+<h3 id="25">2.5 初始条件</h3>
+<h4 id="251">2.5.1 初始位移</h4>
+<p>初始条件中的位移描述弹性体在初始时刻的几何形态。数学形式为：
+$$
+u_i(x, t=0) = u_i^0(x),
+$$
+其中 <span class="arithmatex">\(u_i^0(x)\)</span> 是初始位移。</p>
+<p>实际意义：
+- 描述弹性体在初始时刻的状态，例如加载或卸载前的变形。</p>
+<hr />
+<h4 id="252">2.5.2 初始速度</h4>
+<p>初始速度描述初始时刻弹性体的运动状态。数学形式为：
+$$
+\frac{\partial u_i}{\partial t}(x, t=0) = v_i^0(x),
+$$
+其中 <span class="arithmatex">\(v_i^0(x)\)</span> 是初始速度。</p>
+<p>实际意义：
+- 动态问题中，初始速度决定了波动的初始传播速度。</p>
+<p>应用场景：
+- 地震波传播：<span class="arithmatex">\(v_i^0(x)\)</span> 表示地震初始振动的速度分布。
+- 机械振动：<span class="arithmatex">\(v_i^0(x)\)</span> 由外部冲击力引起。</p>
+<hr />
+<h3 id="26">2.6 能量</h3>
+<h4 id="261">2.6.1 应变能</h4>
+<p>应变能描述弹性体内部由于变形而存储的能量，密度形式为：
+$$
+W = \frac{1}{2} \sigma_{ij} \varepsilon_{ij}.
+$$</p>
+<p>总应变能：
+$$
+U = \int_V W \, \mathrm{d}V = \int_V \frac{1}{2} \sigma_{ij} \varepsilon_{ij} \, \mathrm{d}V,
+$$
+其中 <span class="arithmatex">\(V\)</span> 为弹性体的体积。</p>
+<p>实际意义：
+- 应变能是弹性体恢复力的来源，表示储能的能力。</p>
+<hr />
+<h4 id="262">2.6.2 外力做功</h4>
+<p>外力做功包括体力和表面力的贡献：
+$$
+W_{\text{ext}} = \int_V b_i u_i \, \mathrm{d}V + \int_{\Gamma_t} t_i u_i \, \mathrm{d}\Gamma.
+$$</p>
+<p>实际意义：
+- 描述外力对弹性体的作用，例如重力、分布载荷等引起的位移功。</p>
+<hr />
+<h4 id="263">2.6.3 总位能</h4>
+<p>总位能是弹性体的总应变能与外力做功的代数和：
+$$
+\Pi = U - W_{\text{ext}}.
+$$</p>
+<p>展开形式：
+$$
+\Pi = \int_V \frac{1}{2} \sigma_{ij} \varepsilon_{ij} \, \mathrm{d}V - \int_V b_i u_i \, \mathrm{d}V - \int_{\Gamma_t} t_i u_i \, \mathrm{d}\Gamma.
+$$</p>
+<p>应用场景：
+- 变分法和有限元法中，平衡态对应于 <span class="arithmatex">\(\Pi\)</span> 的极小值。</p>
+<hr />
+<h4 id="264">2.6.4 余能</h4>
+<p>余能是弹性体变形过程中，因不可恢复塑性形变而损失的能量。对于弹性体的余能密度为：
+$$
+W_{\text{p}} = W - \text{恢复功}.
+$$</p>
+<p>对于线性弹性问题，余能为零。对于塑性材料：
+$$
+W_{\text{p}} = \int_V (\sigma_{ij} \varepsilon_{ij} - \sigma_{ij} \varepsilon_{ij}^\text{elastic}) \, \mathrm{d}V.
+$$</p>
+<p>实际意义：
+- 用于描述不可恢复变形的能量耗散，例如塑性变形或蠕变。</p>
+<hr />
+<p>薄板理论是弹性力学的重要分支，用于分析厚度远小于其他两维尺寸的结构（如板、壳）。以下是薄板基本方程的详细复习，包括几何方程、物理方程、平衡方程、边界条件和能量分析。</p>
+<hr />
+<h2 id="2_1">2.薄板基本方程</h2>
+<h3 id="21_1">2.1 薄板的假设</h3>
+<p>在推导薄板的基本方程之前，我们需要明确一些经典薄板理论的假设（基于 Kirchhoff-Love 假设）：
+1. <strong>薄板厚度 <span class="arithmatex">\(h\)</span> 远小于长度和宽度</strong>：
+   $$ h \ll L, \, h \ll b. $$</p>
+<ol>
+<li>
+<p><strong>板的中面是参考面</strong>：所有位移和变形均相对于中面（厚度方向的中间平面）定义。</p>
+</li>
+<li>
+<p><strong>垂线保持垂直</strong>：板中垂直于中面的直线在变形后仍保持直线并垂直于中面。</p>
+</li>
+<li>
+<p><strong>忽略厚度方向的应力 <span class="arithmatex">\(\sigma_z\)</span></strong>：与平面应力问题类似，板内的法向应力 <span class="arithmatex">\(\sigma_z\)</span> 很小，可忽略。</p>
+</li>
+</ol>
+<hr />
+<h3 id="22_1">2.2 薄板的几何方程</h3>
+<p>几何方程描述板的变形关系，主要包括中面曲率、挠度和应变的关系。</p>
+<h4 id="221"><strong>2.2.1 广义应变和曲率</strong></h4>
+<p>广义应变（即曲率和扭率） <span class="arithmatex">\(\boldsymbol{\kappa}\)</span> 是薄板变形后的曲率和扭曲的描述。其表达式为：
+$$
+\boldsymbol{\kappa} =
+\begin{bmatrix}
+-\frac{\partial^2 w}{\partial x^2} \
+-\frac{\partial^2 w}{\partial y^2} \
+-2\frac{\partial^2 w}{\partial x \partial y}
+\end{bmatrix},
+$$
+这里：
+- <span class="arithmatex">\(-\frac{\partial^2 w}{\partial x^2}\)</span>：表示薄板在 <span class="arithmatex">\(x\)</span> 方向的曲率。
+- <span class="arithmatex">\(-\frac{\partial^2 w}{\partial y^2}\)</span>：表示薄板在 <span class="arithmatex">\(y\)</span> 方向的曲率。
+- <span class="arithmatex">\(-2\frac{\partial^2 w}{\partial x \partial y}\)</span>：表示薄板的 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 方向的扭率。</p>
+<p>这描述了薄板中面变形后在各方向上的几何变化。</p>
+<h4 id="222-l"><strong>2.2.2 广义微分算子 <span class="arithmatex">\(L\)</span></strong></h4>
+<p>广义应变 <span class="arithmatex">\(\boldsymbol{\kappa}\)</span> 通过挠度 <span class="arithmatex">\(w(x, y)\)</span> 计算，其关系为：
+$$
+\boldsymbol{\kappa} = L w,
+$$
+其中：
+$$
+L =
+\begin{bmatrix}
+-\frac{\partial^2}{\partial x^2} \
+-\frac{\partial^2}{\partial y^2} \
+-2\frac{\partial^2}{\partial x \partial y}
+\end{bmatrix}.
+$$</p>
+<p>广义微分算子 <span class="arithmatex">\(L\)</span> 用于从薄板的挠度 <span class="arithmatex">\(w(x, y)\)</span> 推导其曲率和扭率。</p>
+<hr />
+<h3 id="23_1">2.3 薄板的物理方程</h3>
+<p>物理方程描述应力与应变的关系（即本构关系）。</p>
+<h4 id="231"><strong>2.3.1 内力表达式</strong></h4>
+<p>薄板的内力用弯矩 <span class="arithmatex">\(\boldsymbol{M}\)</span> 表示，定义为：
+$$
+\boldsymbol{M} = 
+\begin{bmatrix}
+M_x \
+M_y \
+M_{xy}
+\end{bmatrix},
+$$
+这里：
+- <span class="arithmatex">\(M_x\)</span>：垂直于 <span class="arithmatex">\(x\)</span> 轴方向上单位长度的弯矩。
+- <span class="arithmatex">\(M_y\)</span>：垂直于 <span class="arithmatex">\(y\)</span> 轴方向上单位长度的弯矩。
+- <span class="arithmatex">\(M_{xy}\)</span>：关于 <span class="arithmatex">\(x-y\)</span> 平面内单位长度的扭矩。</p>
+<p><span class="arithmatex">\(M_{xy} = M_{yx}\)</span> 表示薄板内力的对称性。</p>
+<h4 id="232"><strong>2.3.2 应力与弯矩的关系</strong></h4>
+<p>通过薄板厚度方向的应力线性分布假设，应力 <span class="arithmatex">\(\sigma_x, \sigma_y, \tau_{xy}\)</span> 可以由弯矩 <span class="arithmatex">\(\boldsymbol{M}\)</span> 计算得出：
+$$
+\begin{aligned}
+\sigma_x &amp;= \frac{12 M_x z}{h^3}, \
+\sigma_y &amp;= \frac{12 M_y z}{h^3}, \
+\tau_{xy} &amp;= \frac{12 M_{xy} z}{h^3},
+\end{aligned}
+$$
+其中：
+- <span class="arithmatex">\(z\)</span> 是厚度方向的位置（<span class="arithmatex">\(-h/2 \leq z \leq h/2\)</span>）。
+- <span class="arithmatex">\(h\)</span> 是薄板的厚度。</p>
+<p>这些公式表明，薄板的应力随厚度方向线性分布，且中面（<span class="arithmatex">\(z=0\)</span>）处应力为零。</p>
+<h4 id="233-"><strong>2.3.3 广义力-广义应变关系</strong></h4>
+<p>薄板的弯矩 <span class="arithmatex">\(\boldsymbol{M}\)</span> 与广义应变（曲率 <span class="arithmatex">\(\boldsymbol{\kappa}\)</span>）的关系为：
+$$
+\boldsymbol{M} = D \boldsymbol{\kappa},
+$$
+其中 <span class="arithmatex">\(D\)</span> 为薄板的刚度矩阵，定义为：
+$$
+D = \frac{Eh^3}{12(1-\nu^2)}
+\begin{bmatrix}
+1 &amp; \nu &amp; 0 \
+\nu &amp; 1 &amp; 0 \
+0 &amp; 0 &amp; \frac{1-\nu}{2}
+\end{bmatrix}.
+$$</p>
+<p><strong>刚度矩阵 <span class="arithmatex">\(D\)</span> 的参数意义</strong>
+- <span class="arithmatex">\(E\)</span>：杨氏模量，表示材料的刚性。
+- <span class="arithmatex">\(\nu\)</span>：泊松比，描述材料横向变形与纵向变形的比值。
+- <span class="arithmatex">\(h\)</span>：薄板的厚度。</p>
+<p>刚度矩阵反映了薄板抵抗弯曲和扭转的能力。</p>
+<hr />
+<h4 id="234"><strong>2.3.4 公式整体意义</strong></h4>
+<ol>
+<li><strong>几何方程</strong>：</li>
+<li>广义应变（曲率和扭率） <span class="arithmatex">\(\boldsymbol{\kappa}\)</span> 描述了薄板中面的弯曲变形。</li>
+<li>
+<p>挠度 <span class="arithmatex">\(w(x, y)\)</span> 是薄板变形的关键变量，通过广义微分算子 <span class="arithmatex">\(L\)</span> 可计算出曲率 <span class="arithmatex">\(\boldsymbol{\kappa}\)</span>。</p>
+</li>
+<li>
+<p><strong>物理方程</strong>：</p>
+</li>
+<li>弯矩 <span class="arithmatex">\(\boldsymbol{M}\)</span> 表示薄板的内力，由刚度矩阵 <span class="arithmatex">\(D\)</span> 和曲率 <span class="arithmatex">\(\boldsymbol{\kappa}\)</span> 决定。</li>
+<li>
+<p>应力 <span class="arithmatex">\(\sigma_x, \sigma_y, \tau_{xy}\)</span> 是弯矩 <span class="arithmatex">\(\boldsymbol{M}\)</span> 在厚度方向的线性分布结果。</p>
+</li>
+<li>
+<p><strong>刚度矩阵 <span class="arithmatex">\(D\)</span></strong>：</p>
+</li>
+<li>量化了薄板的材料性质（通过 <span class="arithmatex">\(E, \nu\)</span>）和几何性质（通过 <span class="arithmatex">\(h\)</span>）。</li>
+</ol>
+<hr />
+<h3 id="24_1">2.4 薄板的平衡方程</h3>
+<p>平衡方程基于薄板在小变形下的力和力矩平衡条件。</p>
+<h4 id="241_1">2.4.1 平面力平衡</h4>
+<p>薄板内的平面力（<span class="arithmatex">\(N_x, N_y, N_{xy}\)</span>）满足平衡方程：
+$$
+\frac{\partial N_x}{\partial x} + \frac{\partial N_{xy}}{\partial y} + q_x = 0,
+$$
+$$
+\frac{\partial N_y}{\partial y} + \frac{\partial N_{xy}}{\partial x} + q_y = 0,
+$$
+其中：
+- <span class="arithmatex">\(N_x, N_y, N_{xy}\)</span> 是单位宽度上的内力（平面力）。
+- <span class="arithmatex">\(q_x, q_y\)</span> 是单位面积上的体力。</p>
+<h4 id="242_1">2.4.2 弯矩平衡</h4>
+<p>薄板的弯矩（<span class="arithmatex">\(M_x, M_y, M_{xy}\)</span>）满足力矩平衡：
+$$
+\frac{\partial^2 M_x}{\partial x^2} + 2\frac{\partial^2 M_{xy}}{\partial x \partial y} + \frac{\partial^2 M_y}{\partial y^2} = q_z,
+$$
+其中 <span class="arithmatex">\(q_z\)</span> 是单位面积上的垂直荷载。</p>
+<p>弯矩与曲率的关系为：
+$$
+M_x = -D \kappa_x, \quad M_y = -D \kappa_y, \quad M_{xy} = -D \kappa_{xy},
+$$
+其中 <span class="arithmatex">\(D\)</span> 为薄板刚度：
+$$
+D = \frac{Eh^3}{12(1-\nu^2)}.
+$$
+这张图主要讨论了薄板的平衡方程以及边界条件的定义和表达。以下结合图中公式，详细解释<strong>薄板的平衡方程</strong>的推导、物理意义及应用。</p>
+<hr />
+<h4 id="241_2">2.4.1 垂直于中面的平衡方程</h4>
+<p>薄板在垂直于中面方向的力学平衡可以通过挠度 <span class="arithmatex">\(w\)</span> 的平衡来建立。根据经典弹性力学，薄板中面方向上的平衡方程为：
+$$
+\frac{\partial^2 M_x}{\partial x^2} + 2 \frac{\partial^2 M_{xy}}{\partial x \partial y} + \frac{\partial^2 M_y}{\partial y^2} + N_x \frac{\partial^2 w}{\partial x^2} + N_y \frac{\partial^2 w}{\partial y^2} + 2N_{xy} \frac{\partial^2 w}{\partial x \partial y} + q - p = \rho \frac{\partial^2 w}{\partial t^2}.
+$$</p>
+<p>公式中各项的物理意义：
+1. <strong>弯矩部分</strong>：
+   - <span class="arithmatex">\(\frac{\partial^2 M_x}{\partial x^2}\)</span>、<span class="arithmatex">\(\frac{\partial^2 M_{xy}}{\partial x \partial y}\)</span>、<span class="arithmatex">\(\frac{\partial^2 M_y}{\partial y^2}\)</span> 表示薄板弯矩的分布及其对挠度 <span class="arithmatex">\(w\)</span> 的影响。
+   - 这些项主要描述薄板的弯曲效应。</p>
+<ol>
+<li><strong>平面内力部分</strong>：</li>
+<li><span class="arithmatex">\(N_x \frac{\partial^2 w}{\partial x^2}\)</span>、<span class="arithmatex">\(N_y \frac{\partial^2 w}{\partial y^2}\)</span>、<span class="arithmatex">\(2N_{xy} \frac{\partial^2 w}{\partial x \partial y}\)</span> 表示薄板中的平面内力（<span class="arithmatex">\(N_x, N_y, N_{xy}\)</span>）对挠度 <span class="arithmatex">\(w\)</span> 的作用。</li>
+<li>
+<p>这些项描述了薄板的平面内拉压对弯曲行为的耦合作用。</p>
+</li>
+<li>
+<p><strong>外载荷部分</strong>：</p>
+</li>
+<li><span class="arithmatex">\(q\)</span> 是分布荷载（作用于板表面的外力）。</li>
+<li><span class="arithmatex">\(p\)</span> 是压力荷载（可能是流体压力等外部载荷）。</li>
+<li>
+<p>这两项表示外力对薄板变形的直接驱动力。</p>
+</li>
+<li>
+<p><strong>惯性部分</strong>：</p>
+</li>
+<li><span class="arithmatex">\(\rho \frac{\partial^2 w}{\partial t^2}\)</span> 表示薄板的惯性力（与时间有关），其中 <span class="arithmatex">\(\rho\)</span> 是薄板的面密度（单位面积的质量）。</li>
+<li>该项仅在动态问题中存在，描述薄板的振动或波动。</li>
+</ol>
+<hr />
+<h4 id="242_2">2.4.2 高阶微分方程形式</h4>
+<p>代入弯矩 <span class="arithmatex">\(M_x, M_y, M_{xy}\)</span> 的定义，平衡方程可简化为挠度 <span class="arithmatex">\(w\)</span> 的四阶偏微分方程：
+$$
+D \nabla^4 w - \left( N_x \frac{\partial^2 w}{\partial x^2} + N_y \frac{\partial^2 w}{\partial y^2} + 2N_{xy} \frac{\partial^2 w}{\partial x \partial y} \right) + q - p = \rho \frac{\partial^2 w}{\partial t^2}.
+$$</p>
+<p>各项的含义：
+1. <span class="arithmatex">\(D \nabla^4 w\)</span>：描述薄板的弯曲刚度对挠度的贡献，<span class="arithmatex">\(D\)</span> 是薄板的弯曲刚度矩阵。
+2. 第二项 <span class="arithmatex">\(\left( N_x \frac{\partial^2 w}{\partial x^2} + N_y \frac{\partial^2 w}{\partial y^2} + 2N_{xy} \frac{\partial^2 w}{\partial x \partial y} \right)\)</span>：描述平面内力对薄板挠度的作用。
+3. <span class="arithmatex">\(q - p\)</span>：外载荷（分布载荷和压力）。
+4. <span class="arithmatex">\(\rho \frac{\partial^2 w}{\partial t^2}\)</span>：惯性力，动态问题时起作用。</p>
+<p>高阶微分方程中的算子：
+- <span class="arithmatex">\(\nabla^4 w\)</span> 是四阶拉普拉斯算子，表示：
+  $$
+  \nabla^4 w = \frac{\partial^4 w}{\partial x^4} + 2 \frac{\partial^4 w}{\partial x^2 \partial y^2} + \frac{\partial^4 w}{\partial y^4}.
+  $$</p>
+<hr />
+<h3 id="25_1">2.5 边界条件</h3>
+<p>边界条件是薄板问题中不可缺少的一部分，用于描述薄板边界的力学状态或几何约束。以下结合图中公式和局部坐标系详细分析边界条件的定义、物理意义以及实际应用。</p>
+<hr />
+<h4 id="251_1">2.5.1 边界条件的建立</h4>
+<p>薄板边界处的力学状态可以通过局部坐标系中的法向、切向方向的力学变量进行描述：</p>
+<ol>
+<li><strong>局部坐标系</strong>：</li>
+<li><span class="arithmatex">\(n\)</span>：表示边界曲线的<strong>外法线方向</strong>。</li>
+<li><span class="arithmatex">\(s\)</span>：表示边界曲线的<strong>切线方向</strong>。</li>
+<li>
+<p><span class="arithmatex">\(\theta\)</span>：法线 <span class="arithmatex">\(n\)</span> 与全局坐标系 <span class="arithmatex">\(x\)</span> 轴的夹角。</p>
+</li>
+<li>
+<p><strong>边界上的力学变量</strong>：</p>
+</li>
+<li>法向弯矩 <span class="arithmatex">\(M_n\)</span> 和切向弯矩 <span class="arithmatex">\(M_s\)</span>：描述边界处的弯曲内力分布。</li>
+<li>剪力 <span class="arithmatex">\(Q_n\)</span>：描述边界上的法向剪力。</li>
+<li>等效剪力 <span class="arithmatex">\(V_n\)</span>：描述法向剪力和切向弯矩的组合效应。</li>
+</ol>
+<hr />
+<h4 id="252_1">2.5.2 弯矩的边界投影关系</h4>
+<p>薄板在局部坐标系中，法向弯矩 <span class="arithmatex">\(M_n\)</span> 和切向弯矩 <span class="arithmatex">\(M_s\)</span> 可以通过全局弯矩（<span class="arithmatex">\(M_x, M_y, M_{xy}\)</span>）与法线方向 <span class="arithmatex">\(\theta\)</span> 的关系表示。</p>
+<h5 id="1-m_n">1 法向弯矩 <span class="arithmatex">\(M_n\)</span></h5>
+<p>法向弯矩 <span class="arithmatex">\(M_n\)</span> 是 <span class="arithmatex">\(M_x, M_y, M_{xy}\)</span> 在法线 <span class="arithmatex">\(n\)</span> 方向上的投影：
+$$
+M_n = M_x \cos^2 \theta + 2M_{xy} \cos \theta \sin \theta + M_y \sin^2 \theta.
+$$
+含义：
+- <span class="arithmatex">\(M_n\)</span> 表示边界法线方向上的弯曲程度，是法线方向内力的主要来源。</p>
+<h5 id="2-m_s">2 切向弯矩 <span class="arithmatex">\(M_s\)</span></h5>
+<p>切向弯矩 <span class="arithmatex">\(M_s\)</span> 是 <span class="arithmatex">\(M_x, M_y, M_{xy}\)</span> 在切线 <span class="arithmatex">\(s\)</span> 方向上的投影：
+$$
+M_s = (M_y - M_x) \cos \theta \sin \theta + M_{xy} (\cos^2 \theta - \sin^2 \theta).
+$$
+含义：
+- <span class="arithmatex">\(M_s\)</span> 描述了边界处的扭转效应和切向弯曲程度。</p>
+<hr />
+<h4 id="253">2.5.3 剪力的边界表达</h4>
+<p>边界上的剪力分为两类：
+1. <strong>法向剪力 <span class="arithmatex">\(Q_n\)</span></strong>：与法线 <span class="arithmatex">\(n\)</span> 方向平行。
+   $$
+   Q_n = Q_x \cos \theta + Q_y \sin \theta.
+   $$</p>
+<ol>
+<li><strong>等效剪力 <span class="arithmatex">\(V_n\)</span></strong>：综合考虑法向剪力和切向弯矩对边界的作用：
+   $$
+   V_n = Q_n + \frac{\partial M_s}{\partial s}.
+   $$</li>
+</ol>
+<h5 id="_6">计算公式：</h5>
+<p>代入相关公式后，等效剪力 <span class="arithmatex">\(V_n\)</span> 可表示为：
+$$
+V_n(w) = Q_n - D \frac{\partial}{\partial n} \nabla^2 w - D \frac{\partial}{\partial s} \left[ \nabla^2 w + (1-\mu) \frac{\partial^2 w}{\partial s^2} \right].
+$$</p>
+<hr />
+<h4 id="254">2.5.4 弯矩与挠度的关系</h4>
+<p>弯矩 <span class="arithmatex">\(M_n\)</span> 和 <span class="arithmatex">\(M_s\)</span> 也可以通过挠度 <span class="arithmatex">\(w\)</span> 的导数计算得出：
+1. <strong>法向弯矩 <span class="arithmatex">\(M_n\)</span></strong>：
+   $$
+   M_n(w) = -D \left[ \nabla^2 w - (1-\mu) \frac{\partial^2 w}{\partial s^2} \right].
+   $$</p>
+<ol>
+<li>
+<p><strong>切向弯矩 <span class="arithmatex">\(M_s\)</span></strong>：
+   $$
+   M_s(w) = -D (1-\mu) \frac{\partial^2 w}{\partial n \partial s}.
+   $$</p>
+</li>
+<li>
+<p><strong>法向剪力 <span class="arithmatex">\(Q_n\)</span></strong>：
+   $$
+   Q_n(w) = -D \frac{\partial \nabla^2 w}{\partial n}.
+   $$</p>
+</li>
+</ol>
+<hr />
+<h4 id="255">2.5.5 边界条件的分类</h4>
+<p>边界条件可以根据物理约束分为三类：</p>
+<h5 id="51">5.1 第一类边界条件（几何边界条件）</h5>
+<p>直接规定边界上的挠度 <span class="arithmatex">\(w\)</span> 和旋转角 <span class="arithmatex">\(\theta_n\)</span>：
+$$
+w = w_0, \quad \theta_n = \frac{\partial w}{\partial n} \quad \text{在 } \Gamma_1.
+$$
+应用场景：
+- 固定边界（如简支板的固定端）。
+- 自由边界（<span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(\theta_n\)</span> 为零）。</p>
+<hr />
+<h5 id="52">5.2 第二类边界条件（内力边界条件）</h5>
+<p>规定边界上的法向弯矩 <span class="arithmatex">\(M_n\)</span> 和切向弯矩 <span class="arithmatex">\(M_s\)</span>：
+$$
+M_n = M_{n0}, \quad M_s = M_{s0} \quad \text{在 } \Gamma_2.
+$$</p>
+<ul>
+<li>边界受特定的弯矩分布控制。</li>
+</ul>
+<hr />
+<h5 id="53">5.3 第三类边界条件（混合边界条件）</h5>
+<p>同时规定法向剪力 <span class="arithmatex">\(V_n\)</span> 和法向弯矩 <span class="arithmatex">\(M_n\)</span>：
+$$
+M_n = M_{n0}, \quad V_n = V_{n0} \quad \text{在 } \Gamma_3.
+$$</p>
+<ul>
+<li>自由边界或受分布荷载边界（如悬臂板的自由端）。</li>
+</ul>
+<hr />
+<h4 id="256">2.5.6 总结</h4>
+<ol>
+<li><strong>边界条件的重要性</strong>：</li>
+<li>
+<p>边界条件为薄板平衡方程提供了必要的约束条件，是求解薄板力学问题的关键。</p>
+</li>
+<li>
+<p><strong>力学变量的投影与局部坐标系的意义</strong>：</p>
+</li>
+<li>
+<p>通过局部坐标系（法向 <span class="arithmatex">\(n\)</span> 和切向 <span class="arithmatex">\(s\)</span>）的弯矩和剪力关系，能够明确边界上的内力分布。</p>
+</li>
+<li>
+<p><strong>实际应用</strong>：</p>
+</li>
+<li>不同边界条件对应于工程中不同的薄板约束情况（如固定边界、简支边界、自由边界等）。</li>
+</ol>
+<hr />
+<h3 id="26_1">2.6基础条件</h3>
+<p>初始条件在薄板动力问题中至关重要，因为它决定了薄板在初始时刻 <span class="arithmatex">\(t_0\)</span> 的挠度和速度分布：</p>
+<ol>
+<li>
+<p><strong>挠度初始条件</strong>：
+   挠度函数 <span class="arithmatex">\(w(x, y; t_0)\)</span> 在区域 <span class="arithmatex">\(\Omega\)</span> 内满足：
+   $$
+   w(x, y; t_0) = w_0(x, y), \quad 在 \, \Omega \, 内
+   $$
+   这是描述薄板初始形状的重要条件。</p>
+</li>
+<li>
+<p><strong>速度初始条件</strong>：
+   挠度的时间导数 <span class="arithmatex">\(\dot{w}(x, y; t_0)\)</span> 在区域 <span class="arithmatex">\(\Omega\)</span> 内满足：
+   $$
+   \dot{w}(x, y; t_0) = \dot{w}_0(x, y), \quad 在 \, \Omega \, 内
+   $$
+   这是薄板初始速度分布的表达式。</p>
+</li>
+</ol>
+<p>这些初始条件用于确保在动力学问题中的解的唯一性和物理可行性。</p>
+<h3 id="27">2.7 能量原理</h3>
+<p>薄板能量原理是变分法和有限元法的基础。</p>
+<h4 id="271">2.7.1 应变能</h4>
+<p>薄板在变形时产生的应变能 <span class="arithmatex">\(U\)</span> 是薄板力学分析的重要组成部分。当不考虑薄板平面内变形时，应变能的表达式为：
+$$
+U = \int_{\Omega} \frac{1}{2} \kappa^\mathrm{T} D \kappa \, \mathrm{d}\Omega
+$$
+其中：
+- <span class="arithmatex">\(\kappa\)</span> 表示薄板的曲率矢量；
+- <span class="arithmatex">\(D\)</span> 是薄板的弯曲刚度矩阵。</p>
+<p>这种形式表明，应变能由薄板的曲率变化和材料刚度共同决定。</p>
+<h4 id="272">2.7.2 总位能</h4>
+<p>当薄板表面承受 <span class="arithmatex">\(z\)</span> 方向的分布载荷 <span class="arithmatex">\(q\)</span> 时，总位能 <span class="arithmatex">\(\Pi_p\)</span> 的表达式为：
+$$
+\Pi_p = \int_{\Omega} \left( \frac{1}{2} \kappa^\mathrm{T} D \kappa - qw \right) \mathrm{d}\Omega - \int_{\Gamma_3} \nabla_n w \, \mathrm{d}\Gamma + \int_{\Gamma_{r_2+r_3}} M_n \frac{\partial w}{\partial n} \, \mathrm{d}\Gamma
+$$
+或者等效地写为：
+$$
+\Pi_p = \int_{\Omega} \left[ \frac{1}{2} (Lw)^\mathrm{T} D (Lw) - qw \right] \mathrm{d}\Omega - \int_{\Gamma_3} \nabla_n w \, \mathrm{d}\Gamma + \int_{\Gamma_{r_2+r_3}} M_n \frac{\partial w}{\partial n} \, \mathrm{d}\Gamma
+$$</p>
+<p>式中：
+-  <span class="arithmatex">\(Lw\)</span> 是与挠度相关的微分算子；
+- <span class="arithmatex">\(\nabla_n\)</span> 表示法向导数；
+- <span class="arithmatex">\(M_n\)</span> 是薄板的法向弯矩。</p>
+<p>这个公式综合了薄板的应变能、外载荷做功及边界作用力的贡献，适用于经典薄板理论。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "search.suggest"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
