@@ -1,39 +1,30 @@
 site_name: HowToLearn
-repo_url: https://github.com/GloomyBee/HowToLearn
-repo_name: GitHub
 theme:
   name: material
   palette:
     primary: indigo
-    scheme: default
-  font:
-    text: Roboto
-    code: Roboto Mono
-  icon:
-    repo: fontawesome/brands/github
+    scheme: default  # 支持暗黑/明亮模式切换
   features:
-    - navigation.tabs
-    - navigation.top
-    - content.code.copy
-    - toc.integrate
-    - search.suggest
-nav:
-  - 首页: index.md
-  - Tags: tags.md
+    - content.code.copy  # 代码块复制按钮
+    - navigation.tabs    # 顶部导航
+    - search.suggest     # 搜索建议
+#nav:
+#  - 首页: index.md
+#  - 文件夹:
+#      - 子文件夹: test1/
+#  - 文件夹2:
+#      - 子文件夹: test2/
 plugins:
   - search
   - tags
-  - git-revision-date-localized:
-      fallback_to_build_date: true
-      type: date
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.highlight:
+  - pymdownx.highlight:  # 代码高亮
       anchor_linenums: true
-  - pymdownx.superfences
-  - attr_list
-  - pymdownx.emoji
+  - pymdownx.superfences  # 增强代码块
+  - attr_list  # 支持图片大小等属性
+  - pymdownx.emoji  # 支持 emoji
+  
 extra_javascript:
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
