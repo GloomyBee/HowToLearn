@@ -17,8 +17,13 @@ theme:
 plugins:
   - search
 markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.highlight:  # 代码高亮
       anchor_linenums: true
   - pymdownx.superfences  # 增强代码块
   - attr_list  # 支持图片大小等属性
   - pymdownx.emoji  # 支持 emoji
+  
+ extra_javascript:
+ - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
